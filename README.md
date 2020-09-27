@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1 align="center">PhotoLife.</h3>
 
 <p align="center">
@@ -136,3 +137,6 @@ stdout_logfile=/var/www/html/photolife.minasyan.info/storage/logs/echo_server.lo
 
 - [ ] Settings | Add Notifications(What type of notifications do you want recieve)(Post Likeing, Following, @mention, New Message)
 - [ ] Settings | Add Delete Account Functionality
+=======
+# kid-social
+>>>>>>> 30621a3fb2d95339cd78306cdec8d3d5411fc6eb
