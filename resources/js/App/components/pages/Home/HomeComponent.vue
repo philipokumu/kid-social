@@ -1,8 +1,57 @@
 <template>
+<div class="is-fullhd">
     <AppLayout>
-        <div class="container is-fullhd">
+        <!-- <div class="container"> -->
+        <div class="container-fluid">
+                
             <div class="columns is-mobile">
-                <div class="column is-8-tablet is-8-desktop">
+                <section class="column is-3-tablet is-3-desktop">
+                    <div class="left-menu">
+                        <div class="item"><i class="fas fa-user-circle"></i> <span>Games</span></div>
+                        <div class="sub-menu">
+                            <ul>
+                                <li><i class="fas fa-user-circle"></i> <span>Online</span></li>
+                                <li><i class="fas fa-user-circle"></i> <span>Video</span></li>
+                                <li><i class="fas fa-user-circle"></i> <span>Educational</span></li>
+                            </ul>
+                        </div>
+                        <div class="item"><i class="fas fa-user-circle"></i> <span>Sports</span></div>
+                        <div class="sub-menu">
+                            <ul>
+                                <li><i class="fas fa-user-circle"></i> <span>Indoor</span></li>
+                                <li><i class="fas fa-user-circle"></i> <span>Outdoor</span></li>
+                            </ul>
+                        </div>
+                        <div class="item"><i class="fas fa-user-circle"></i> <span>Food</span></div>
+                        <div class="sub-menu">
+                            <ul>
+                                <li><i class="fas fa-user-circle"></i> <span>Healthy</span></li>
+                                <li><i class="fas fa-user-circle"></i> <span>Junk</span></li>
+                            </ul>
+                        </div>
+                        <div class="item"><i class="fas fa-user-circle"></i> <span>Travel</span></div>
+                        <div class="sub-menu">
+                            <ul>
+                                <li><i class="fas fa-user-circle"></i> <span>Local</span></li>
+                                <li><i class="fas fa-user-circle"></i> <span>Abroad</span></li>
+                            </ul>
+                        </div>
+                        <div class="item"><i class="fas fa-user-circle"></i> <span>Education</span></div>
+                        <div class="sub-menu">
+                            <ul>
+                                <li><i class="fas fa-user-circle"></i> <span>Virtual</span></li>
+                                <li><i class="fas fa-user-circle"></i> <span>Home school</span></li>
+                            </ul>
+                        </div>
+                        <div class="item"><i class="fas fa-user-circle"></i> <span>Volunteering</span></div>
+                        <div class="sub-menu">
+                            <ul>
+                                <li><i class="fas fa-user-circle"></i> <span>Community based</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="column is-6-tablet is-6-desktop">
                     <div class="section sharing-panel mb-30">
                         <div class="columns">
                             <div class="column is-3">
@@ -12,8 +61,8 @@
                                     <b-icon icon="video" type="is-success"></b-icon>
                                 </b-button>
                                 <b-modal :active.sync="isPhotoAddModalActive" scroll="keep" :width="600"
-                                         :can-cancel="false"
-                                         trap-focus>
+                                        :can-cancel="false"
+                                        trap-focus>
                                     <add-post-modal v-if="isPhotoAddModalActive"></add-post-modal>
                                 </b-modal>
                             </div>
@@ -25,11 +74,11 @@
                         </div>
                     </div>
                     <div class="section pt-0 posts">
-                        <div class="columns">
+                        <!-- <div class="columns">
                             <div class="column">
                                 <h5>Latest posts</h5>
                             </div>
-                        </div>
+                        </div> -->
                         <transition-group name="fade">
                             <post-component v-for="post in POSTS" :post="post" :key="post.id"></post-component>
                         </transition-group>
@@ -42,41 +91,43 @@
                             </div>
                         </infinite-loading>
                     </div>
-                </div>
-                <div class="column is-4 is-hidden-mobile" id="sidebar">
+                </section>
+                <section class="column is-3 is-hidden-mobile" id="sidebar">
                     <div class="columns is-multiline">
                         <div class="column is-12 is-hidden-mobile">
                             <div class="section featured-posts">
                                 <h5>
                                     Popular posts
                                     <span class="icon is-small has-text-danger is-pulled-right">
-                             <i class="ion-ionic ion-md-heart"></i>
+                            <i class="ion-ionic ion-md-heart"></i>
                         </span>
                                 </h5>
                                 <div class="posts-list">
                                     <div class="columns is-multiline">
                                         <user-post-component v-for="post in POPULAR_POSTS"
-                                                             :key="post.id"
-                                                             :post="post"></user-post-component>
+                                                            :key="post.id"
+                                                            :post="post"></user-post-component>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="column is-12 is-hidden-mobile">
                             <ul class="navbar-footer">
-                                <li v-for="page in PAGES">
+                                <li v-for="page in PAGES" v-bind:key="page">
                                     <router-link :to="{name: 'page', params: {alias: page.alias}}">
                                         {{ page.title }}
                                     </router-link>
                                 </li>
                             </ul>
-                            © 2019 PhotoLife
+                            © {{ new Date().getFullYear() }} Social
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     </AppLayout>
+</div>
+
 </template>
 <script>
     import {mapActions, mapGetters} from 'vuex'
@@ -84,6 +135,7 @@
     import PostComponent from "./PostComponent";
     import UserPostComponent from "../User/PostComponent";
     import AppLayout from "../../layouts/AppLayout";
+
 
     const AddPostModal = () => ({
         component: import('./AddPostModal.vue')
@@ -111,7 +163,7 @@
                 var $sidebar = $("#sidebar"),
                     $window = $(window),
                     offset = $sidebar.offset(),
-                    topPadding = 0;
+                    topPadding = 50;
 
                 $window.scroll(function () {
                     if ($window.scrollTop() > offset.top) {
@@ -148,8 +200,22 @@
     }
 </script>
 
-
 <style appear lang="scss">
+    $fa-font-path: "~font-awesome/fonts" !default;
+    @import '~font-awesome/scss/font-awesome';
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .container-fluid {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
     .sharing-panel {
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
         background-color: white;
@@ -187,4 +253,49 @@
         }
     }
 
+    .left-menu {
+        // position: sticky;
+        // top: 0;
+        width: 100%;
+    }
+
+    .left-menu {
+        overflow: hidden;
+    }
+
+    .left-menu:hover {
+        overflow: scroll;
+    }
+
+    .left-menu .item {
+        position: relative;
+        padding: 10px 0px;
+        font-size: 18px;
+        font-weight: 800;
+        border-bottom: 1px solid #fff;
+
+    }
+
+    .sub-menu{
+        padding-left: 15px;
+    }
+
+    .sub-menu li {
+       padding: 5px; 
+       cursor: pointer;
+    }
+
+    .sub-menu li:hover {
+        color: teal;
+        background-color: thistle;
+        border-radius: 3%;
+
+    }
+
+    section.left-menu {
+        height: 100%;
+        display: flex;
+        overflow-y: auto;
+        flex-direction: column;
+    }
 </style>

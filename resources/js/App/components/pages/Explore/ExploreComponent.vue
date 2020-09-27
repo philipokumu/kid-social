@@ -4,11 +4,14 @@
             <div class='container profile-heading pt-30 pb-30'>
                 <div class='columns is-mobile is-multiline'>
                     <div class='column is-offset-1-mobile'>
+                        <passport-clients></passport-clients>
+                        <passport-authorized-clients></passport-authorized-clients>
+                        <passport-personal-access-tokens></passport-personal-access-tokens>
                         <h1 class='title is-bold has-text-light'>
                             Explore posts
-                            <tempalte v-if="$route.name === 'hashtag'">
+                            <template v-if="$route.name === 'hashtag'">
                                 #{{ $route.params.tag }}
-                            </tempalte>
+                            </template>
                         </h1>
                         <h2 class="title is-5 has-text-light">
                             We have more than <span class="has-text-black-ter is-bold">{{ TOTAL_POSTS }}</span> posts.

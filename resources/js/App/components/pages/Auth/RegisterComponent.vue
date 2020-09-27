@@ -15,7 +15,7 @@
                                     <h3 class="title is-6 mb-50">
                                         Sign up to see photos and videos from your friends.
                                     </h3>
-                                    <img src="/images/logo144x144.png" width="144" alt="">
+                                    <img src="/images/kidslogo-144x 144.png" width="144" alt="">
                                     <span class="has-text-info" style="font-size: 50pt">+</span>
                                     <span class="title is-2 has-text-primary">
                                         <b-icon icon="account-group" size="is-large"></b-icon>

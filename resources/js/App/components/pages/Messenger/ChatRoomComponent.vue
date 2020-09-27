@@ -24,7 +24,7 @@
                     <span>{{ group.group_date }}</span>
                 </div>
 
-                <div class="bubble" v-for="message in group.messages"
+                <div class="bubble" v-for="message in group.messages" :key="message.id"
                      :class="{ 'me' : checkAuthUser(message.sender.id), 'you' : !checkAuthUser(message.sender.id) }">
                     <b-tooltip :label="message.created_at_fully"
                                :position="checkAuthUser(message.sender.id) ? 'is-right' : 'is-left'">

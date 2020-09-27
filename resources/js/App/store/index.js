@@ -23,7 +23,7 @@ export const store = new Vuex.Store({
     },
 
     state: {
-        pageTitle: 'Photo Life',
+        pageTitle: 'Social',
     },
 
     getters: {},

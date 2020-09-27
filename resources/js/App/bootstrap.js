@@ -1,4 +1,4 @@
-require('webrtc-adapter');
+// require('webrtc-adapter');
 window.Cookies = require('js-cookie');
 
 import Echo from "laravel-echo"
@@ -30,9 +30,9 @@ try {
  */
 
 // import Echo from 'laravel-echo'
-//
+
 // window.Pusher = require('pusher-js');
-//
+
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
 //     key: process.env.MIX_PUSHER_APP_KEY,

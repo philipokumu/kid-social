@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Login &mdash; {{ env('APP_NAME', 'PhotoLife') }}</title>
+  <title>Login &mdash; {{ env('APP_NAME', 'Social') }}</title>
   <link rel="stylesheet" href="{{ asset('assets/dashboard/css/app.css') }}">
 </head>
 

@@ -5,9 +5,9 @@
                 <div class="container">
                     <div class="columns is-marginless is-centered">
                         <div class="column is-7 is-grouped-centered">
-                            <img src="/images/logo144x144.png" width="104" alt="">
-                            <h1 class="title is-2 mb-50">Welcome to PhotoLife</h1>
-                            <div class="columns features mt-50 is-hidden-mobile">
+                            <img src="/images/kidslogo-144x 144.png" width="104" alt="">
+                            <h1 class="title is-2 mb-50">Welcome to Kids' social</h1>
+                            <!-- <div class="columns features mt-50 is-hidden-mobile">
                                 <div class="column is-4">
                                     <div class="card">
                                         <b-icon icon="heart" type="is-danger"></b-icon>
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="column is-5">
                             <div class="card" v-if="showLoginForm">

@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'api.v1.'], function () {
 
     Route::group(['prefix' => 'user'], function () {
-        Route::post('login', 'Auth\LoginController@login');
+        Route::post('login', 'Auth\LoginController@login')->name('login');
         Route::post('register', 'Auth\RegisterController@register');
         Route::post('password/reset', 'Auth\ForgotPasswordController@sendResetLinkEmail');
     });

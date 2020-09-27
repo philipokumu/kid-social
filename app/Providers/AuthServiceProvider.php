@@ -28,6 +28,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        // Passport::enableImplicitGrant();
+
+        // Passport::routes();
         Passport::routes(null, ['prefix' => 'api/v1/oauth']);
+
     }
 }
