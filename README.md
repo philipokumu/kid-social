@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # To Do
 ### --- Dashboard ---
 - [ ] Home Page | Add Google Analytics Charts
